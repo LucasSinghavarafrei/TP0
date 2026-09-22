@@ -1,0 +1,64 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package calculator;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author lsing
+ */
+public class Calculator {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //Affichage des options
+        System.out.println("Please enter the operator :");
+        System.out.println("1) add");
+        System.out.println("2) substract");
+        System.out.println("3) multiply");
+        System.out.println("4) divide");
+        System.out.println("5) modulo");
+        
+        //Création de la variable opérateur
+        Scanner nb = new Scanner(System.in);
+        int operateur = nb.nextInt();
+        
+                
+        if (operateur <1 || operateur > 5){
+            System.out.println("Error : enter a number between 1 and 5");
+            return;
+        }
+        
+        System.out.println("Choose a number:");
+        Scanner nb1 = new Scanner(System.in);
+        int operande1 = nb1.nextInt();
+
+        System.out.println("Choose an another number:");
+        Scanner nb2 = new Scanner(System.in);
+        int operande2 = nb2.nextInt();
+        
+        switch(operateur){
+            case 1:
+                System.out.println("Result is :" + (operande1 + operande2));
+                break;
+            case 2:
+                System.out.println("Result is :" + (operande1 - operande2));
+                break;
+            case 3:
+                System.out.println("Result is :" + (operande1 * operande2));
+                break;
+            case 4:
+                System.out.println("Result is :" + ((float)operande1 / operande2));
+                break;
+            case 5:
+                System.out.println("Result is :" + (operande1 % operande2));
+                break;
+        }
+    }
+    
+}
